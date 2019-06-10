@@ -3,6 +3,7 @@
 #
 # Examples:
 require 'faker'
+require 'date'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # User.destroy_all
@@ -37,6 +38,16 @@ end
     address: Faker::Address.full_address,
     photo: 'https://source.unsplash.com/random/?studio',
     user_id: rand(1..5)
+    )
+end
+
+10.times do
+  Booking.create(
+    user_id: rand(1..10),
+    studio_id: rand(1..5),
+    checkin: Faker::Date.backward(13),
+    checkout: Faker::Date.forward(13),
+    availability: [true, false].sample
     )
 end
 
