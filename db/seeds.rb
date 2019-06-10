@@ -5,7 +5,7 @@
 require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
+# User.destroy_all
 
 5.times do
   User.create!(
@@ -28,6 +28,19 @@ end
     host: false
     )
 end
+
+5.times do
+  Studio.create!(
+    name: Faker::Company.name,
+    category: ["recording studio", "photography studio", "dance studio"].sample,
+    description: Faker::Name.last_name,
+    address: Faker::Address.full_address,
+    photo: 'https://source.unsplash.com/random/?studio',
+    user_id: rand(1..5)
+    )
+end
+
+
 
 
 
