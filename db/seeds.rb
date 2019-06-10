@@ -2,6 +2,35 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
-#
+require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+
+5.times do
+  User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo: Faker::Avatar.image,
+    email: Faker::Internet.email,
+    password: Faker::Coffee.variety,
+    host: true
+    )
+end
+
+  5.times do
+  User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo: Faker::Avatar.image,
+    email: Faker::Internet.email,
+    password: Faker::Coffee.variety,
+    host: false
+    )
+end
+
+
+
+# Studio.new()
+# Booking.new()
+# Review.new()
