@@ -9,6 +9,7 @@ class Booking < ApplicationRecord
 
   def studio_belong_user?
     array = self.user.studios.all
+    # person who is booking the studio
     if array.include?(self.studio_id)
       return false
     else
