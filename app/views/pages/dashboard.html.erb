@@ -1,0 +1,27 @@
+<!-- dashboard.html.erb -->
+
+User Dashboard
+
+<div>
+  <% if @bookings %>
+    <% @bookings.each do |booking|%>
+
+      <%= booking %>
+    <% end %>
+  <% else %>
+    <p>No bookings</p>
+  <% end %>
+</div>
+
+<br>
+<br>
+
+<div>
+  <% if @studios %>
+    <% @studios.each do |studio|%>
+      <%= studio.name %>
+    <% end %>
+  <% else %>
+    <p>No studios</p>
+  <% end %>
+</div>

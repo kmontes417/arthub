@@ -20,7 +20,7 @@ puts  "Cleaned DB"
     last_name: Faker::Name.last_name,
     photo: Faker::Avatar.image,
     email: Faker::Internet.email,
-    password: Faker::Coffee.variety,
+    password: "123456",
     host: true
     )
 end
@@ -31,7 +31,7 @@ end
     last_name: Faker::Name.last_name,
     photo: Faker::Avatar.image,
     email: Faker::Internet.email,
-    password: Faker::Coffee.variety,
+    password: "123456",
     host: false
     )
 end
