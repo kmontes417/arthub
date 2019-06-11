@@ -47,7 +47,7 @@ end
     studio_id: rand(1..5),
     checkin: Faker::Date.backward(13),
     checkout: Faker::Date.forward(13),
-    availability: [true, false].sample
+    status: ["pending", "accepted", "rejected"].sample
     )
 end
 
