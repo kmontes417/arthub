@@ -3,6 +3,9 @@
 
   <%= simple_form_for @studio do |f| %>
     <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :photo %>
     <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
 </div>
