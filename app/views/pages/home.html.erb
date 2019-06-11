@@ -1,23 +1,26 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-
 <div>
-<% User.first.bookings.all.each do |booking|%>
+  <% if @bookings %>
+    <% @bookings.each do |booking|%>
 
-
-<%= booking.studio_id %>
-
-<% end %>
+      <%= booking %>
+    <% end %>
+  <% else %>
+    <p>No bookings</p>
+  <% end %>
 </div>
 
 <br>
 <br>
 
 <div>
-<%= User.first.studios.each do |studio| %>
-
-<%= studio.id %>
-
-<% end  %>
+  <% if @studios %>
+    <% @studios.each do |studio|%>
+      <%= studio.name %>
+    <% end %>
+  <% else %>
+    <p>No studios</p>
+  <% end %>
 </div>
