@@ -8,6 +8,12 @@ require 'date'
 #   Character.create(name: 'Luke', movie: movies.first)
 # User.destroy_all
 
+Review.destroy_all
+Booking.destroy_all
+Studio.destroy_all
+User.destroy_all
+puts  "Cleaned DB"
+
 5.times do
   User.create!(
     first_name: Faker::Name.first_name,
@@ -37,23 +43,27 @@ end
     description: Faker::Name.last_name,
     address: Faker::Address.full_address,
     photo: 'https://source.unsplash.com/random/?studio',
-    user_id: rand(1..5)
+    user: User.where(host: true).sample
     )
 end
 
 10.times do
   Booking.create(
-    user_id: rand(1..10),
-    studio_id: rand(1..5),
+    user: User.where(host: false).sample,
+    studio: Studio.all.sample,
     checkin: Faker::Date.backward(13),
     checkout: Faker::Date.forward(13),
+    #check if availabilty should be on Studio table
     availability: [true, false].sample
     )
 end
 
-
-
-
+10.times do
+  Review.create(
+    booking: Booking.all.sample,
+    description: Faker::Quote.robin,
+    rating: rand(1..5))
+end
 
 # Studio.new()
 # Booking.new()
