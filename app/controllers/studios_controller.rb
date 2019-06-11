@@ -25,6 +25,7 @@ class StudiosController < ApplicationController
     end
   end
 
+
   private
 
   def studio_params
