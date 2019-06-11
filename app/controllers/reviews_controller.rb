@@ -6,9 +6,12 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to studio_path(@studio)
     else
-      @booking = Booking.new
-      render "studios/show"
+      render :new
     end
+  end
+
+  def new
+    @review = Review.new
   end
 
   private
