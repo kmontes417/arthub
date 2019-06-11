@@ -1,5 +1,5 @@
 class StudiosController < ApplicationController
-  
+
   skip_before_action :authenticate_user!, only: :index
 
   def index
@@ -19,7 +19,7 @@ class StudiosController < ApplicationController
     @studio = Studio.new(studio_params)
     @studio.user = @user
     if @studio.save
-      redirect_to dashbord_path(@dashbord)
+      redirect_to dashbord_path
     else
       render 'new'
     end
