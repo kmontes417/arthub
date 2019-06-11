@@ -53,8 +53,7 @@ end
     studio: Studio.all.sample,
     checkin: Faker::Date.backward(13),
     checkout: Faker::Date.forward(13),
-    #check if availabilty should be on Studio table
-    availability: [true, false].sample
+    status: ["pending", "accepted", "rejected"].sample
     )
 end
 
