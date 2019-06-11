@@ -19,7 +19,7 @@ class StudiosController < ApplicationController
     @studio = Studio.new(studio_params)
     @studio.user = @user
     if @studio.save
-      redirect_to dashbord_path
+      redirect_to dashboard_path
     else
       render 'new'
     end
