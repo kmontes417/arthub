@@ -1,4 +1,7 @@
 class StudiosController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @studios = Studio.all
   end
@@ -6,4 +9,5 @@ class StudiosController < ApplicationController
   def show
     @studio = Studio.find params[:id]
   end
+
 end
