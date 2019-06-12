@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :studio
-  has_one :review
+  has_one :review, dependent: :destroy
 
   validate :studio_belong_user?
   validates :checkin, presence: true

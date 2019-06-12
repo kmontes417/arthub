@@ -53,6 +53,7 @@ class StudiosController < ApplicationController
   end
 
   def destroy
+    @studio = Studio.find params[:id]
     @studio.destroy
     redirect_to dashboard_path
   end
