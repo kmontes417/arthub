@@ -53,6 +53,7 @@ class StudiosController < ApplicationController
   end
 
   def destroy
+    @studio = Studio.find params[:id]
     @studio.destroy
     redirect_to dashboard_path
   end
@@ -60,6 +61,6 @@ class StudiosController < ApplicationController
   private
 
   def studio_params
-    params.require(:studio).permit(:name, :description, :address, :photo)
+    params.require(:studio).permit(:name, :description, :address, :photo, :price)
   end
 end
