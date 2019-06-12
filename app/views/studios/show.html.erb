@@ -3,6 +3,6 @@
   <p><%= @studio.address %></p>
   <p><%= @studio.category %></p>
   <p><%= @studio.description %></p>
-  <p><%= @studio.price %></p>
+  <p>$<%= @studio.price %></p>
   <%= cl_image_tag @studio.photo, height: 300, width: 400, crop: :fill %>
 </div>
