@@ -37,6 +37,11 @@ class StudiosController < ApplicationController
     end
   end
 
+  def destroy
+    @studio.destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def studio_params
