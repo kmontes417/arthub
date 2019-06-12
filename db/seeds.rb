@@ -43,7 +43,7 @@ ADRESSES = ["Piazza Duca D'Aosta, Milan", "Piazza Freud, 1, MIlan", "Piazza Bott
     name: Faker::Company.name,
     category: ["recording studio", "photography studio", "dance studio"].sample ,
     description: Faker::Name.last_name,
-    address: ADRESSES.sample.drop,
+    address: ADRESSES.sample,
     photo: 'https://source.unsplash.com/random/?studio',
     user: User.where(host: true).sample,
     city: "milan",
