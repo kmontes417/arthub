@@ -3,7 +3,13 @@ class StudiosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+
+    if params["search"].present?
+      @studios = Studio.where("category LIKE ?", "%#{params[:search][:category].downcase}%")
+
+    else
     @studios = Studio.all
+    end
   end
 
   def show
