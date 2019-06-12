@@ -1,12 +1,20 @@
+<div class="home-banner">
+  <h1 class="banner-title"></h1>
+  <div class="container">
+    <div class="row landing_header">
+      <div class="col-6">
+        <%= simple_form_for :search, url: studios_path, method: :get  do |f| %>
+          <%= f.input :category, collection: ["Recording Studio","photography studio","dance studio"], include_blank: false, include_hidden: false %>
+          <%= f.input :city, collection: ["Milan"], include_blank: false, include_hidden: false  %>
+          <%= f.button :submit, "Search", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
 
-<div class="landing_header">
-
-  <%= simple_form_for :search, url: studios_path, method: :get  do |f| %>
-  <%= f.input :category, collection: ["Recording Studio","photography studio","dance studio"], include_blank: false, include_hidden: false %>
-  <%= f.input :city, collection: ["Milan"], include_blank: false, include_hidden: false  %>
-  <%= f.button :submit, "Search", class: 'btn btn-primary' %>
-  <% end %>
-
-
-
-
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= "" %>
+      </div>
+    </div>
+  </div>
+</div>
