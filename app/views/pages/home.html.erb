@@ -2,7 +2,7 @@
 <div class="landing_header">
 
   <%= simple_form_for :search, url: studios_path, method: :get  do |f| %>
-  <%= f.input :category, collection: ["Recording Studio","Photografy Studio","Moive Studio"], include_blank: false, include_hidden: false %>
+  <%= f.input :category, collection: ["Recording Studio","photography studio","dance studio"], include_blank: false, include_hidden: false %>
   <%= f.input :city, collection: ["Milan"], include_blank: false, include_hidden: false  %>
   <%= f.button :submit, "Search", class: 'btn btn-primary' %>
   <% end %>

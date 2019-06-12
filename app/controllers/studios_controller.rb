@@ -5,7 +5,7 @@ class StudiosController < ApplicationController
   def index
 
     if params["search"].present?
-      @studios = Studio.where("category LIKE ?", "%#{params[:search][:category].downcase}%")
+      @studios = Studio.where("category LIKE ? AND city LIKE ?","%#{params[:search][:category].downcase}%","%#{params[:search][:city].downcase}%")
 
     else
     @studios = Studio.all
