@@ -1,6 +1,6 @@
 .navbar-arthub {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;  //rgba(255,255,255,0.5)
 }
 
 .navbar-arthub .navbar-collapse {
@@ -24,4 +24,15 @@
     &:hover {
         color:orange;
     }
+}
+
+.nav-item-active {
+  color: white;
+  &:hover {
+  background-color: yellow;
+  }
+}
+
+.nav-link {
+  color: white !important;
 }
