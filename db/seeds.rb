@@ -41,11 +41,12 @@ ADRESSES = ["Piazza Duca D'Aosta, Milan", "Piazza Freud, 1, MIlan", "Piazza Bott
 5.times do
   Studio.create!(
     name: Faker::Company.name,
-    category: ["recording studio", "photography studio", "dance studio"].sample,
+    category: ["recording studio", "photography studio", "dance studio"].sample ,
     description: Faker::Name.last_name,
     address: ADRESSES.sample.drop,
     photo: 'https://source.unsplash.com/random/?studio',
-    user: User.where(host: true).sample
+    user: User.where(host: true).sample,
+    city: "milan",
     )
 end
 

@@ -14,6 +14,13 @@ class StudiosController < ApplicationController
       }
     end
 
+    if params["search"].present?
+      @studios = Studio.where("category LIKE ? AND city LIKE ?","%#{params[:search][:category].downcase}%","%#{params[:search][:city].downcase}%")
+
+    else
+    @studios = Studio.all
+    end
+
   end
 
   def show
@@ -35,8 +42,20 @@ class StudiosController < ApplicationController
     end
   end
 
+  def edit
+    @studio = Studio.find(params[:id])
+  end
 
+  def update
+    @studio = Studio.find(params[:id])
+    @studio.update(studio_params)
+    redirect_to studio_path(@studio)
+  end
 
+  def destroy
+    @studio.destroy
+    redirect_to dashboard_path
+  end
 
   private
 

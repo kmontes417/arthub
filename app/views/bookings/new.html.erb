@@ -1,2 +1,9 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+
+
+<%= simple_form_for [@studio, @booking] do |f| %>
+
+  <%= f.input :checkin, as: :string, input_html: { id: "range_start" } %>
+  <%= f.submit "Book the studio", class: "btn btn-primary" %>
+<% end %>
