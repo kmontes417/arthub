@@ -1,10 +1,10 @@
 class ReviewsController < ApplicationController
   def create
-    @studio = studio.find(params[:studio_id])
+    @booking = booking.find(params[:studio_id])
     @review = Review.new(review_params)
-    @review.studio = @studio
+    @review.booking = @booking
     if @review.save
-      redirect_to studio_path(@studio)
+      redirect_to studio_path(@booking.studio)
     else
       render :new
     end
