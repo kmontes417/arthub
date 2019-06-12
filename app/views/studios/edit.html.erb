@@ -1,0 +1,15 @@
+<!-- edit.html.erb -->
+<div class="col-md-8">
+  <h1>Edit a studio</h1>
+
+  <%= simple_form_for @studio do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+

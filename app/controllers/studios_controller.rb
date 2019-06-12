@@ -30,11 +30,9 @@ class StudiosController < ApplicationController
   end
 
   def update
-    if @studio.update(studio_params)
-      redirect_to studio_path(@studio)
-    else
-      render :edit
-    end
+    @studio = Studio.find(params[:id])
+    @studio.update(studio_params)
+    redirect_to studio_path(@studio)
   end
 
   def destroy
