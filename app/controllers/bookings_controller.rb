@@ -5,6 +5,16 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @booking = Booking.new
+    @booking.studio_id = params[:studio_id]
+    @booking.user = current_user
+    @booking.checkin = booking_params[:checkin].split.first
+    @booking.checkout = booking_params[:checkin].split.last
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -20,5 +30,13 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking.destroy
+    redirect_to dashboard_path
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:checkin)
   end
 end

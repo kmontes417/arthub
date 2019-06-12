@@ -4,6 +4,6 @@
 
 <%= simple_form_for [@studio, @booking] do |f| %>
 
-  <%= f.input :checkin, as: :date, html5: true %>
+  <%= f.input :checkin, as: :string, input_html: { id: "range_start" } %>
   <%= f.submit "Book the studio", class: "btn btn-primary" %>
 <% end %>
