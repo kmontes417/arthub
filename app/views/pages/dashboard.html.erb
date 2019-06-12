@@ -20,6 +20,7 @@ User Dashboard
   <% if @studios %>
     <% @studios.each do |studio|%>
       <%= studio.name %>
+      <%= cl_image_tag studio.photo, height: 300, width: 400, crop: :fill %>
     <% end %>
   <% else %>
     <p>No studios</p>
