@@ -6,3 +6,8 @@
   <p><%= @studio.price %></p>
   <%= cl_image_tag @studio.photo, height: 300, width: 400, crop: :fill %>
 </div>
+
+<p> REVIEWS:</p>
+<% @reviews.each do |review| %>
+  <p> Description: <%= review.description %>, Rating: <%= review.rating %> </p>
+<% end %>

@@ -3,22 +3,7 @@
 User Dashboard
 
 <div>
-  <% if @bookings %>
-    <% @bookings.each do |booking|%>
-      <%= booking.studio.name %>
-      <%= booking.user.first_name %>
-      <button> <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %> </button>
-
-    <% end %>
-  <% else %>
-    <p>No bookings</p>
-  <% end %>
-</div>
-
-<br>
-<br>
-
-<div>
+  <h1>My studios</h1>
   <% if @studios %>
     <% @studios.each do |studio|%>
       <%= studio.name %>
@@ -28,3 +13,23 @@ User Dashboard
     <p>No studios</p>
   <% end %>
 </div>
+
+<br>
+<br>
+
+<div>
+  <h1>My Bookings</h1>
+  <% if @bookings %>
+    <% @bookings.each do |booking|%>
+      <%= booking.studio.name %>
+      <%= booking.user.first_name %>
+      <%= cl_image_tag booking.photo, height: 300, width: 400, crop: :fill %>
+      <button> <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %> </button>
+
+    <% end %>
+  <% else %>
+    <p>No bookings</p>
+  <% end %>
+</div>
+
+
