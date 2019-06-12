@@ -3,7 +3,17 @@ class StudiosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @studios = Studio.all
+    @studios = Studio.where.not(latitude: nil, longitude: nil)
+
+    @markers = @studios.map do |studio|
+      {
+        lat: studio.latitude,
+        lng: studio.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { studio: studio })
+
+      }
+    end
+
   end
 
   def show

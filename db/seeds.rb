@@ -36,12 +36,14 @@ end
     )
 end
 
+ADRESSES = ["Piazza Duca D'Aosta, Milan", "Piazza Freud, 1, MIlan", "Piazza Bottini, 10, Milan", "Via G. B. Cassinis, 83, Milan", "Piazzale P. Genova,4, Milan", "Via Domodossola, 15, Milan", "Via Oroboni, 16, Milan", "Via Domodossola, 15, Milan", "Viale Molise 71, Milan", "Piazza Ascari, Milan" ]
+
 5.times do
   Studio.create!(
     name: Faker::Company.name,
     category: ["recording studio", "photography studio", "dance studio"].sample,
     description: Faker::Name.last_name,
-    address: Faker::Address.full_address,
+    address: ADRESSES.sample.drop,
     photo: 'https://source.unsplash.com/random/?studio',
     user: User.where(host: true).sample
     )

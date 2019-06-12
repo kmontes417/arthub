@@ -1,3 +1,6 @@
+  <div class="flex-container">
+
+  <div>
   <% @studios.each do |studio| %>
   <img src="<%= studio.photo %>" alt="">
   <p><%= studio.name %></p>
@@ -6,3 +9,16 @@
   <p><%= studio.description %></p>
   <p><%= studio.price %></p>
   <% end %>
+  </div>
+
+  <div
+  id="map"
+  style="width: 75%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
+</div>
+
+
