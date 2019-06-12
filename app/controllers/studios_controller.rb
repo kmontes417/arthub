@@ -3,6 +3,16 @@ class StudiosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    @studios = Studio.where.not(latitude: nil, longitude: nil)
+
+    @markers = @studios.map do |studio|
+      {
+        lat: studio.latitude,
+        lng: studio.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { studio: studio })
+
+      }
+    end
 
     if params["search"].present?
       @studios = Studio.where("category LIKE ? AND city LIKE ?","%#{params[:search][:category].downcase}%","%#{params[:search][:city].downcase}%")
@@ -10,6 +20,7 @@ class StudiosController < ApplicationController
     else
     @studios = Studio.all
     end
+
   end
 
   def show
