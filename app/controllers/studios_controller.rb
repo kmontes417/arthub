@@ -19,9 +19,21 @@ class StudiosController < ApplicationController
     @studio = Studio.new(studio_params)
     @studio.user = @user
     if @studio.save
-      redirect_to dashbord_path
+      redirect_to dashboard_path
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @studio = Studio.find(params[:id])
+  end
+
+  def update
+    if @studio.update(studio_params)
+      redirect_to studio_path(@studio)
+    else
+      render :edit
     end
   end
 
