@@ -7,9 +7,9 @@
   <%= cl_image_tag @studio.photo, height: 300, width: 400, crop: :fill %>
 </div>
 
-<% @studio.reviews.each do |review| %>
-  <div><%= review.rating%></div>
-  <div><%= review.description%></div>
+<p> REVIEWS:</p>
+<% @reviews.each do |review| %>
+  <p> Description: <%= review.description %>, Rating: <%= review.rating %> </p>
 <% end %>
 
 <button> <%= link_to "go back", studios_path %></button>

@@ -20,11 +20,11 @@ class StudiosController < ApplicationController
     else
     @studios = Studio.all
     end
-
   end
 
   def show
     @studio = Studio.find params[:id]
+    @reviews = @studio.reviews
   end
 
   def new
