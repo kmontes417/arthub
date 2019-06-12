@@ -5,8 +5,10 @@ User Dashboard
 <div>
   <% if @bookings %>
     <% @bookings.each do |booking|%>
+      <%= booking.studio.name %>
+      <%= booking.user.first_name %>
+      <button> <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %> </button>
 
-      <%= booking %>
     <% end %>
   <% else %>
     <p>No bookings</p>
