@@ -1,24 +1,11 @@
-<div>
-  <p></p>
-  <p><%= @studio.address %></p>
-  <p><%=  %></p>
-  <p>$<%= @studio.price %></p>
-  <%= cl_image_tag @studio.photo, height: 300, width: 400, crop: :fill %>
+<div class="show-banner" style="position: center bottom; background-size: cover; background-image: url('<%= @studio.photo %>');">
 </div>
-
-<p> REVIEWS:</p>
-<% @reviews.each do |review| %>
-  <p> Description: <%= review.description %>, Rating: <%= review.rating %> </p>
-<% end %>
-
-<button> <%= link_to "go back", studios_path %></button>
-<button> <%= link_to "book this studio", new_studio_booking_path(@studio) %></button>
-
 
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6">
+      <div class="studio-wrapper">
       <div class="studio-info">
         <h1><%= @studio.name %></h1>
         <p><%= @studio.category %></p>
@@ -30,38 +17,45 @@
         <h2>Description</h2>
         <p><%= @studio.description %></p>
       </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="booking-wrapper">
+      <%= render 'bookings/new' %>
+      </div>
+    </div>
+  </div>
 
-
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
       <div class="reviews-wrapper">
-        <h2>Reviews</h2>
-        <p>This studio has 4 reviews</p>
+      <h2>Reviews</h2>
+      <p>This studio has 4 reviews</p>
+      <% @reviews.each do |review| %>
+      <div class="review-wrapper">
+        <div class="review-info">
 
-        <div class="review-wrapper">
-            <% @reviews.each do |review| %>
-          <div class="review-info">
-            <img src="http://unsplash.it/50/50/?random" alt="user" class="avatar">
-              <p class="review-name"> <%= review.booking.user.first_name %> </p>
-              <p class="review-date">June 2017</p>
-          </div>
-
-          <div class="review-stars">
-            <p>
-              <i class="fa fa-star star" aria-hidden="true"></i>
-              <i class="fa fa-star star" aria-hidden="true"></i>
-              <i class="fa fa-star star" aria-hidden="true"></i>
-              <i class="fa fa-star star" aria-hidden="true"></i>
-            </p>
-          </div>
-
-          <div class="review-body">
-            <p><%= review.description %></p>
-          </div>
-          <% end %>
+          <img src="http://unsplash.it/50/50/?random" alt="user" class="avatar">
+          <p class="review-name"> <%= review.booking.user.first_name %> </p>
+          <p class="review-date">June 2017</p>
         </div>
 
+        <div class="review-stars">
+          <p>
+            <% review.rating.times do %>
+            <i class="fa fa-star star" aria-hidden="true"></i>
+            <% end %>
+
+          </p>
+        </div>
+
+        <div class="review-body">
+          <p><%= review.description %></p>
+        </div>
 
       </div>
-
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
