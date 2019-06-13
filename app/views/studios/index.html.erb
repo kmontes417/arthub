@@ -2,6 +2,7 @@
    <div class="row">
     <div class="col-8">
       <% @studios.each do |studio| %>
+      <%= link_to studio_path(studio) do %>
       <div class="card-trip">
         <img src="<%= studio.photo %>">
         <div class="card-trip-infos">
@@ -9,10 +10,10 @@
             <h2><%= studio.name %></h2>
             <p><%= studio.description %></p>
           </div>
-          <h2 class="card-trip-pricing">£ <%= studio.price %></h2>
+          <h2 class="card-trip-pricing">€ <%= studio.price %> /hr</h2>
         </div>
       </div>
-
+        <% end %>
      <% end %>
 
 
