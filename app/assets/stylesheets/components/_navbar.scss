@@ -11,9 +11,6 @@
   width: 100px;
 }
 
-.navbar-arthub .nav-item {
-  color: white;
-}
 
 .navbarlinkclass {
   color: black;
@@ -27,12 +24,14 @@
 }
 
 .nav-item-active {
-  color: white;
-  &:hover {
-  background-color: yellow;
+  color: black;
+    &:hover {
+    color: orange;
   }
 }
 
-.nav-link {
-  color: white !important;
+.av-link {
+  color: black !important;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
 }

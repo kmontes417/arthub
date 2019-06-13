@@ -1,4 +1,8 @@
 class BookingsController < ApplicationController
+
+  def show
+  end
+
   def new
     @studio = Studio.find(params[:studio_id])
     @booking = Booking.new
@@ -36,13 +40,17 @@ class BookingsController < ApplicationController
   end
 
   def cancel
+    @booking = Booking.find params[:id]
     @booking.status = "cancelled"
     @booking.save
+    redirect_to dashboard_path
   end
 
   def confirm
+    @booking = Booking.find params[:id]
     @booking.status = "confirmed"
     @booking.save
+    redirect_to dashboard_path
   end
 
   private
