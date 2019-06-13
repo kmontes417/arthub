@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
 .nav-link {
-  color: white !important
+  color: white !important;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
 }
+
