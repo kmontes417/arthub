@@ -4,5 +4,17 @@
   /*align-items: center;
   flex-wrap: wrap;*/
   background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
 }
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+/*.d-flex {
+  padding: 2px 16px;
+}
+*/
