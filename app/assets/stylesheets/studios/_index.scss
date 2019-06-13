@@ -3,7 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 40px;
-
+  width: 90%;
 
 
     &:hover {
@@ -31,6 +31,9 @@
   opacity: .7;
   margin: 0;
 }
+.card-image{
+  width:100%;
+}
 
 
 .card-trip .card-trip-infos {
@@ -52,6 +55,7 @@
   position: -webkit-sticky; /* Safari */
   position: sticky;
   height: calc(100vh - 230px)
+
 }
 
 a:-webkit-any-link, a,  {
@@ -60,5 +64,14 @@ a:-webkit-any-link, a,  {
 
 }
 
+// .mappa {
+
+//       &:hover {
+//           border: solid 1px #CCC;
+//         -moz-box-shadow: 1px 1px 0px #999;
+//         -webkit-box-shadow: 1px 1px 0px #999;
+//           box-shadow: 0 0 3px rgba(0,0,0,0.1);
+//   }
+// }
 
 
