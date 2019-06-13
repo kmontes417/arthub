@@ -2,6 +2,16 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 40px;
+
+
+
+    &:hover {
+      border: solid 1px #CCC;
+    -moz-box-shadow: 1px 1px 0px #999;
+    -webkit-box-shadow: 1px 1px 0px #999;
+        box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  }
 }
 
 .card-trip > img {
@@ -37,3 +47,18 @@
   top: -20px;
   width: 40px;
 }
+
+#map {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  height: calc(100vh - 230px)
+}
+
+a:-webkit-any-link, a,  {
+    text-decoration: none;
+    color: black;
+
+}
+
+
+
