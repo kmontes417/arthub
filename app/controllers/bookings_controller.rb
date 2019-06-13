@@ -36,12 +36,12 @@ class BookingsController < ApplicationController
   end
 
   def cancel
-    @booking.status = "cencelled"
+    @booking.status = "cancelled"
     @booking.save
   end
 
   def confirm
-    @booking.status = "confimed"
+    @booking.status = "confirmed"
     @booking.save
   end
 
