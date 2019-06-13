@@ -1,31 +1,41 @@
-<!-- dashboard.html.erb -->
 
-User Dashboard
-
-<div>
-  <h1>My studios</h1>
-  <% if @studios %>
-    <% @studios.each do |studio|%>
-      <%= studio.name %>
-      <%= cl_image_tag studio.photo, height: 300, width: 400, crop: :fill %>
-  <% end %>
-<% end %>
+<!-- <div class="container"> -->
 
 
-<br>
-<br>
-
-<div>
-  <h1>My Bookings</h1>
-  <% if @bookings %>
-    <% @bookings.each do |booking|%>
-      <%= booking.studio.name %>
-      <%= booking.user.first_name %>
-      <%= cl_image_tag booking.studio.photo, height: 300, width: 400, crop: :fill %>
-      <button> <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %> </button>
+<h1 class="header">My Studios</h1>
+<div class="flex-container">
+    <% if @studios %>
+      <% @studios.each do |studio|%>
+  <div class="flex-item">
+        <%= studio.name %>
+        <%= cl_image_tag studio.photo, height: 300, width: 400, crop: :fill %>
+  </div>
+      <% end %>
     <% end %>
-  <% else %>
-    <p>No bookings</p>
-<% end %>
+</div>
+
+
+<h1 class="header">My Bookings</h1>
+<div class="flex-container">
+    <% if @bookings %>
+      <% @bookings.each do |booking|%>
+  <div class="flex-item">
+        <%= booking.studio.name %>
+        <%= booking.user.first_name %>
+        <%= cl_image_tag booking.studio.photo, height: 300, width: 300, crop: :fill %>
+      <button> <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %> </button>
+      <% end %>
+  </div>
+    <% else %>
+      <p>No bookings</p>
+    <% end %>
+</div>
+
+
+<!-- </div> -->
+
+
+
+
 
 
