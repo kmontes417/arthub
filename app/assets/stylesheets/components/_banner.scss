@@ -1,12 +1,40 @@
 .home-banner {
-  background-image: url('https://images.unsplash.com/photo-1559732277-e1404199c712?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  background-image: url('https://images.unsplash.com/photo-1559732277-7453b141e3a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80');
   background-size: cover;
   height: 100vh;
   color: #eee;
-  text-align: center;
-  padding-top: 10vh;
+  // padding-top: 10vh;
 }
 
-.banner-title {
-  margin-bottom: 16vh;
+.bannercontainer {
+  margin-bottom: 0px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#search_category {
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  border: 1px solid white;
+  height: 40px;
+  width:200px;
+}
+#search_city {
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  border: 1px solid white;
+  height: 40px;
+  width:140px;
+}
+
+.search-btn {
+  color: white;
+  background-color: #007274;
+  height: 40px;
+}
+
+.simple_form {
 }
