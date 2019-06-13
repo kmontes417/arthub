@@ -51,6 +51,7 @@
 #map {
   position: -webkit-sticky; /* Safari */
   position: sticky;
+  height: calc(100vh - 230px)
 }
 
 a:-webkit-any-link, a,  {
