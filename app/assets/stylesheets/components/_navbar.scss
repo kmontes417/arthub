@@ -8,12 +8,18 @@
 }
 
 .navbar-arthub .navbar-brand img {
-  width: 100px;
+  width: 40px;
+  margin-left: 10px;
 }
 
 
 .navbarlinkclass {
-  color: black;
+  color: white !important;
+}
+
+
+.nav-link {
+  color: white !important;
 }
 
 .navbarlinkclass {
@@ -21,17 +27,4 @@
     &:hover {
         color:orange;
     }
-}
-
-.nav-item-active {
-  color: black;
-    &:hover {
-    color: orange;
-  }
-}
-
-.av-link {
-  color: black !important;
-  text-decoration: none;
-  &:hover { text-decoration: underline; }
 }
