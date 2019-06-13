@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
    end
 
+  post '/booking/:id', to: 'bookings#confirm', as: 'confirm'
+  post '/booking/:id', to: 'bookings#cancel', as: 'cancel'
   get '/dashboard', to: 'pages#dashboard'
 end

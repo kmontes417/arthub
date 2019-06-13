@@ -2,6 +2,19 @@
 
 User Dashboard
 
+  <h1>My Studio's Bookings</h1>
+  <% if @studios.present? %>
+  <% @studios.each do |studio|%>
+    <% studio.bookings.each do |booking| %>
+      <%= booking.status %>
+      <button> <%= link_to "confirm", confirm_path(booking) %> </button>
+      <button> <%= link_to "cancel", cancel_path(booking) %> </button>
+    <% end %>
+<% end %>
+<% else %>
+<p>You dont own a studio </p>
+<% end %>
+
 <div>
   <h1>My studios</h1>
   <% if @studios %>
@@ -11,7 +24,6 @@ User Dashboard
   <% end %>
 <% end %>
 
-
 <br>
 <br>
 
@@ -20,6 +32,7 @@ User Dashboard
   <% if @bookings %>
     <% @bookings.each do |booking|%>
       <%= booking.studio.name %>
+      <%= booking.status %>
       <%= booking.user.first_name %>
       <%= cl_image_tag booking.studio.photo, height: 300, width: 400, crop: :fill %>
       <button> <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %> </button>
