@@ -1,15 +1,23 @@
-<div class="col-md-8">
-  <h1>Create a new studio</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-4">
 
-  <%= simple_form_for @studio do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :address %>
-    <%= f.input :price %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
+      <h1>Add a new studio</h1>
+
+        <%= simple_form_for @studio do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :address %>
+          <%= f.input :price %>
+          <p>Category</p>
+          <%= f.input_field :category, collection: ["Recording Studio","Photography studio","Dance studio"], include_blank: false, include_hidden: false, label: false, class: 'input-field-dropdown' %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, class: 'search-btn' %>
+        <% end %>
+
+   </div>
+  </div>
 </div>
 
 
