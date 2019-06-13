@@ -13,13 +13,10 @@
 
 
 .navbarlinkclass {
-  color: black;
-}
-
-.navbarlinkclass {
-    margin:20px;
-    &:hover {
-        color:orange;
+  color: white;
+  margin:20px;
+  &:hover {
+    color:orange;
     }
 }
 
