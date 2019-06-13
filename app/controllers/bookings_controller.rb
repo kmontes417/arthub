@@ -35,6 +35,16 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def cancel
+    @booking.status = "cencelled"
+    @booking.save
+  end
+
+  def confirm
+    @booking.status = "confimed"
+    @booking.save
+  end
+
   private
 
   def booking_params
