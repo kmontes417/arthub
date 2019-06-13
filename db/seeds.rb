@@ -74,7 +74,6 @@ puts "Creating Booking seeds"
     studio: Studio.all.sample,
     checkin: Faker::Date.backward(13),
     checkout: Faker::Date.forward(13),
-    status: ["pending", "accepted", "rejected"].sample
     )
 end
 

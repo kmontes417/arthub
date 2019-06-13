@@ -7,8 +7,10 @@ User Dashboard
   <% @studios.each do |studio|%>
     <% studio.bookings.each do |booking| %>
       <%= booking.status %>
-      <button> <%= link_to "confirm", confirm_path(booking) %> </button>
-      <button> <%= link_to "cancel", cancel_path(booking) %> </button>
+      <button> <%= link_to "confirm", confirm_path(booking),method: :post,
+      data: { confirm: "Are you sure?" } %> </button>
+      <button> <%= link_to "cancel", cancel_path(booking),method: :patch,
+      data: { confirm: "Are you sure?" } %> </button>
     <% end %>
 <% end %>
 <% else %>
