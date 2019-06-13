@@ -44,15 +44,17 @@
     <% @studios.each do |studio|%>
       <% studio.bookings.each do |booking| %>
         <%= link_to studio_path(booking) do %>
-          <%= booking.status %>
-          <button>
-            <%= link_to "confirm", confirm_path(booking),method: :post,
-            data: { confirm: "Are you sure?" } %>
-          </button>
-          <button>
-            <%= link_to "cancel", cancel_path(booking),method: :patch,
-            data: { confirm: "Are you sure?" } %>
-          </button>
+          <div class="card">
+            <%= booking.status %>
+            <button>
+              <%= link_to "confirm", confirm_path(booking),method: :post,
+              data: { confirm: "Are you sure?" } %>
+            </button>
+            <button>
+              <%= link_to "cancel", cancel_path(booking),method: :patch,
+              data: { confirm: "Are you sure?" } %>
+            </button>
+          </div>
         <% end %>
       <% end %>
     <% end %>
