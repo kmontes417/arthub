@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
 
       redirect_to studio_path(@booking.studio)
     else
-      flash[:alert] = "Something went wrong."
       render :new
     end
   end
