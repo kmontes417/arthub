@@ -3,8 +3,8 @@
 <%= render 'shared/homepage_navbar' %>
 
 <div class="bannercontainer">
-    <div class="form-banner">
 
+    <div class="form-banner">
         <%= simple_form_for :search, url: studios_path, method: :get  do |f| %>
           <%= f.input_field :category, collection: ["Recording Studio","Photography studio","Dance studio"], include_blank: false, include_hidden: false,
             label: false %>

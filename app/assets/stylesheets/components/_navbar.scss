@@ -3,23 +3,34 @@
   background-color: transparent;  //rgba(255,255,255,0.5)
 }
 
-.navbar-arthub .navbar-collapse {
-  flex-grow: 0;
-}
-
 .navbar-arthub .navbar-brand img {
   width: 40px;
   margin-left: 10px;
 }
 
+.navbar-arthub .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-arthub-white .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-arthub-white .navbar-brand img {
+  width: 40px;
+  margin-left: 10px;
+}
+
+.navbar-arthub-white {
+  justify-content: space-between;
+  background-color: white;  //rgba(255,255,255,0.5)
+}
 
 .navbarlinkclass {
   color: white !important;
 }
-
-
-.nav-link {
-  color: white !important;
+.nvblack {
+  color: black !important;
 }
 
 .navbarlinkclass {
@@ -28,3 +39,5 @@
         color:orange;
     }
 }
+
+
