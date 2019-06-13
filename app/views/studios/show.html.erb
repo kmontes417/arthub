@@ -1,8 +1,7 @@
 <div>
-  <p><%= @studio.name %></p>
+  <p></p>
   <p><%= @studio.address %></p>
-  <p><%= @studio.category %></p>
-  <p><%= @studio.description %></p>
+  <p><%=  %></p>
   <p>$<%= @studio.price %></p>
   <%= cl_image_tag @studio.photo, height: 300, width: 400, crop: :fill %>
 </div>
@@ -14,3 +13,21 @@
 
 <button> <%= link_to "go back", studios_path %></button>
 <button> <%= link_to "book this studio", new_studio_booking_path(@studio) %></button>
+
+
+
+
+
+<div class="card-trip">
+  <%= cl_image_tag @studio.photo, height: 300, width: 400, crop: :fill %>
+
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @studio.name %></h2>
+      <p><%= @studio.description %></p>
+    </div>
+    <h2 class="card-trip-pricing">€ <%= @studio.price %></h2>
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+  </div>
+</div>
+

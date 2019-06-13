@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.booking = @booking
-    raise
     if @review.save
 
       redirect_to studio_path(@booking.studio)

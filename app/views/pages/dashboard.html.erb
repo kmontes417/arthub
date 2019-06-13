@@ -2,7 +2,6 @@
 
 <body class="body">
 
-
 <h1 class="header">My Studios</h1>
 <div class="flex-container">
     <% if @studios %>
@@ -27,14 +26,37 @@
         <%= booking.studio.name %>
         <%= booking.user.first_name %>
         <%= cl_image_tag booking.studio.photo, height: 300, width: 300, crop: :fill %>
+
+
       <button> <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %> </button>
   </div>
   <% end %>
+   <% end %>
     <% else %>
       <p>No bookings</p>
     <% end %>
 </div>
 
+
+  <h1 class="header">My Studio's Bookings</h1>
+  <div class="flex-container">
+    <% if @studios.present? %>
+      <% @studios.each do |studio|%>
+        <%= link_to studio_path(studio) do %>
+        <% studio.bookings.each do |booking| %>
+        <%= booking.status %>
+          <button> <%= link_to "confirm", confirm_path(booking),method: :post,
+            data: { confirm: "Are you sure?" } %> </button>
+          <button> <%= link_to "cancel", cancel_path(booking),method: :patch,
+            data: { confirm: "Are you sure?" } %> </button>
+        <% end %>
+    <%end%>
+
+    <% else %>
+      <p>You dont own a studio </p>
+    <% end %>
+    <% end %>
+  </div>
 
 
 </body class="body">

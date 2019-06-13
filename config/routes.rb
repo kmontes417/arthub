@@ -6,9 +6,11 @@ Rails.application.routes.draw do
    resources :studios do
     resources :bookings, only: [:new, :create, :edit, :update, :destroy]
     end
-   resources :bookings, only: [:show] do
+   resources :bookings, only: [:index] do
     resources :reviews, only: [:new, :create]
    end
 
+  patch '/bookings/:id', to: 'bookings#cancel', as: 'cancel'
+  post '/bookings/:id', to: 'bookings#confirm', as: 'confirm'
   get '/dashboard', to: 'pages#dashboard'
 end
