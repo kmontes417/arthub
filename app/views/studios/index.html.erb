@@ -1,16 +1,21 @@
   <div class="flex-container">
    <div class="row">
     <div class="col-8">
-    <% @studios.each do |studio| %>
+      <% @studios.each do |studio| %>
+      <div class="card-trip">
+        <img src="<%= studio.photo %>">
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= studio.name %></h2>
+            <p><%= studio.description %></p>
+          </div>
+          <h2 class="card-trip-pricing">£ <%= studio.price %></h2>
+        </div>
+      </div>
+
+     <% end %>
 
 
-    <p><%= studio.name %></p>
-    <p><%= studio.address %></p>
-    <p><%= studio.category %></p>
-    <p><%= studio.description %></p>
-    <p><%= studio.price %></p>
-    <%= cl_image_tag studio.photo, height: 300, width: 400, crop: :fill %>
-    <% end %>
     </div>
 
     <div class="col-4"
@@ -24,3 +29,8 @@
   </div>
 
 </div>
+
+
+
+
+
