@@ -1,5 +1,5 @@
 
-<!-- <div class="container"> -->
+
 <body class="body">
 
 
@@ -7,10 +7,12 @@
 <div class="flex-container">
     <% if @studios %>
       <% @studios.each do |studio|%>
+  <%= link_to studio_path(studio) do %>
   <div class="flex-item">
         <%= studio.name %>
         <%= cl_image_tag studio.photo, height: 300, width: 400, crop: :fill %>
   </div>
+  <% end %>
       <% end %>
     <% end %>
 </div>
@@ -20,13 +22,14 @@
 <div class="flex-container">
     <% if @bookings %>
       <% @bookings.each do |booking|%>
+  <%= link_to studio_path(booking) do %>
   <div class="flex-item">
         <%= booking.studio.name %>
         <%= booking.user.first_name %>
         <%= cl_image_tag booking.studio.photo, height: 300, width: 300, crop: :fill %>
       <button> <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %> </button>
-      <% end %>
   </div>
+  <% end %>
     <% else %>
       <p>No bookings</p>
     <% end %>
@@ -35,7 +38,9 @@
 
 
 </body class="body">
-<!-- </div> -->
+
+
+
 
 
 
