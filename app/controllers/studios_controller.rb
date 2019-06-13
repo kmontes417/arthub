@@ -24,6 +24,7 @@ class StudiosController < ApplicationController
 
   def show
     @studio = Studio.find params[:id]
+    @booking = Booking.new
     @reviews = @studio.reviews
   end
 
