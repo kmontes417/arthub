@@ -10,5 +10,11 @@ class PagesController < ApplicationController
     @user = current_user
     @bookings = @user.bookings
     @studios = @user.studios
+    @user_studio_bookings = []
+    @studios.each do |studio|
+      studio.bookings.each do |booking|
+        @user_studio_bookings << booking
+      end
+    end
   end
 end
