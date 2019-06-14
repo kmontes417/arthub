@@ -28,16 +28,19 @@
 
 .navbarlinkclass {
   color: white !important;
+  margin:20px;
+  padding-bottom:10px;
 }
+
 .nvblack {
   color: black !important;
 }
 
-.navbarlinkclass {
-    margin:20px;
-    &:hover {
-        color:orange;
-    }
+.navbarlinkclass:hover {
+  border-bottom: 2px solid orange;
 }
 
+.oh:hover {
+  border-bottom: 2px solid orange;
+}
 
