@@ -15,7 +15,7 @@ class StudiosController < ApplicationController
     end
 
     if params["search"].present?
-      @studios = Studio.where("category LIKE ? AND city LIKE ?","%#{params[:search][:category].downcase}%","%#{params[:search][:city].downcase}%")
+      @studios = Studio.where("category ILIKE ? AND city ILIKE ?","%#{params[:search][:category]}%","%#{params[:search][:city]}%")
 
     else
     @studios = Studio.all

@@ -8,12 +8,12 @@
           <%= f.input :name %>
           <%= f.input :description %>
           <%= f.input :address %>
-          <%= f.input :price %>
+          <%= f.input :price, label:'Price(€/hr)' %>
           <p>Category</p>
           <%= f.input_field :category, collection: ["recording studio","photography studio","dance studio"], include_blank: false, include_hidden: false, label: false, class: 'input-field-dropdown' %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
-          <%= f.button :submit, class: 'search-btn' %>
+          <%= f.button :submit, class: 'search-btn'%>
         <% end %>
 
    </div>
