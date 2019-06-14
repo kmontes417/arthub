@@ -8,14 +8,14 @@
       <div class="studio-wrapper">
         <div class="studio-info">
           <strong><h1><%= @studio.name %></h1></strong>
-          <p><%= @studio.category %></p>
-          <p><%= @studio.address %></p>
-          <strong><p>£<%= '%.2f' % @studio.price %></p></strong>
+          <p><%= @studio.category.capitalize %></p>
+          <p><%= @studio.address.capitalize %></p>
+          <strong><p><%= '%.2f' % @studio.price %> €/hr</p></strong>
         </div>
 
         <div class="description mb-3">
           <h2>Description</h2>
-          <p><%= @studio.description %></p>
+          <p><%= @studio.description %>.</p>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@
               <img src='<%=review.booking.user.photo%>' alt="user" class="avatar">
               <div class="test-review-user">
                 <p>
-                  <small><%= review.booking.user.first_name %></small>
+                  <small><%= review.booking.user.first_name.capitalize %></small>
                 </p>
                 <p>
                   <small><%= review.created_at.strftime('%B %Y') %></small>
