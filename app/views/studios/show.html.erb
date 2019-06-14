@@ -2,61 +2,60 @@
 </div>
 
 
-<div class="container">
+<div class="container justify-content-center" >
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="studio-wrapper">
-      <div class="studio-info">
-        <h1><%= @studio.name %></h1>
-        <p><%= @studio.category %></p>
-        <p><%= @studio.address %></p>
-        <p>$<%= @studio.price %></p>
-      </div>
+        <div class="studio-info">
+          <strong><h1><%= @studio.name %></h1></strong>
+          <p><%= @studio.category %></p>
+          <p><%= @studio.address %></p>
+          <strong><p>£<%= '%.2f' % @studio.price %></p></strong>
+        </div>
 
-      <div class="description">
-        <h2>Description</h2>
-        <p><%= @studio.description %></p>
-      </div>
+        <div class="description mb-3">
+          <h2>Description</h2>
+          <p><%= @studio.description %></p>
+        </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
-      <div class="booking-wrapper">
       <%= render 'bookings/new' %>
-      </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="reviews-wrapper">
-      <h2>Reviews</h2>
-      <p>This studio has 5 reviews</p>
-      <% @reviews.each do |review| %>
-      <div class="review-wrapper">
-        <div class="review-info">
-
-          <img src="http://unsplash.it/50/50/?random" alt="user" class="avatar">
-          <p class="review-name"> <%= review.booking.user.first_name %> </p>
-          <p class="review-date">June 2017</p>
-        </div>
-
-        <div class="review-stars">
-          <p>
-            <% review.rating.times do %>
-            <i class="fa fa-star star" aria-hidden="true"></i>
-            <% end %>
-
-          </p>
-        </div>
-
-        <div class="review-body">
-          <p><%= review.description %></p>
-        </div>
-
-      </div>
-      <% end %>
-      </div>
+        <h2>Reviews</h2>
+        <% @reviews.each do |review| %>
+          <div>
+            <div class="test-review-info">
+              <img src="http://unsplash.it/50/50/?random" alt="user" class="avatar">
+              <div class="test-review-user">
+                <p>
+                  <small><%= review.booking.user.first_name %></small>
+                </p>
+                <p>
+                  <small><%= review.created_at.strftime('%B %Y') %></small>
+                </p>
+              </div>
+              <div>
+                <% review.rating.times do %>
+                  <i class="fa fa-star star" aria-hidden="true"></i>
+                <% end %>
+              </div>
+            </div>
+            <div class="review-description">
+              <p><%= review.description %></p>
+            </div>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>
+</div>
+
+
+
 

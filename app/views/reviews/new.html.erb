@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-4">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-4">
       <h3>Add a review</h3>
       <%= simple_form_for [@booking, @review] do |f| %>
       <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
       <%= f.input :description %>
-      <%= f.submit "Send your review", class: "btn btn-primary"%>
+      <%= f.submit "Send your review", class: "search-btn"%>
       <% end %>
     </div>
   </div>
