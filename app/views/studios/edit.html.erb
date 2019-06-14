@@ -7,9 +7,11 @@
     <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :price %>
-    <%= f.input :photo %>
+    <p>Category</p>
+    <%= f.input_field :category, collection: ["Recording Studio","Photography studio","Dance studio"], include_blank: false, include_hidden: false, label: false, class: 'input-field-dropdown' %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= f.input :photo %>
+    <%= f.button :submit, class: 'search-btn' %>
   <% end %>
 </div>
 
