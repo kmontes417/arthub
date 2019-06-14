@@ -15,8 +15,8 @@
         <img src="<%= studio.photo %>">
         <div class="card-trip-infos">
           <div>
-            <h2><%= studio.name %></h2>
-            <p><%= studio.description %></p>
+            <h2 class="studio-name mb-1"><%= studio.name %></h2>
+            <p><%= studio.description.capitalize %></p>
           </div>
           <h2 class="card-trip-pricing">€ <%= studio.price %> /hr</h2>
         </div>
