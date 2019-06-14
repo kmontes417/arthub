@@ -51,7 +51,7 @@
 #map {
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  height: calc(100vh - 230px)
+  height: calc(100vh-230px);
 }
 
 a:-webkit-any-link, a,  {
@@ -60,5 +60,10 @@ a:-webkit-any-link, a,  {
 
 }
 
+.cards-container-index {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 70vw;
+}
 
 
