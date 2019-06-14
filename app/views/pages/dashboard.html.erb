@@ -22,8 +22,9 @@
       <%= link_to studio_path(booking) do %>
         <div class="card">
           <%= booking.studio.name %>
+
+          <%= cl_image_tag booking.studio.photo, height: 300, width: 400, crop: :fill %>
           <%= booking.user.first_name %>
-          <%= cl_image_tag booking.studio.photo, height: 300, width: 300, crop: :fill %>
           <button>
             <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %>
           </button>
@@ -41,19 +42,33 @@
 <h1 class="header">My Studio's Bookings</h1>
 <div class="d-flex justify-content-around">
   <% if @studios.present? %>
+
     <% @studios.each do |studio|%>
       <% studio.bookings.each do |booking| %>
+
         <%= link_to studio_path(booking) do %>
-          <div class="card">
-            <%= booking.status %>
-            <button>
-              <%= link_to "confirm", confirm_path(booking),method: :post,
-              data: { confirm: "Are you sure?" } %>
-            </button>
-            <button>
-              <%= link_to "cancel", cancel_path(booking),method: :patch,
-              data: { confirm: "Are you sure?" } %>
-            </button>
+        <% info = @bookings.first %>
+
+          <div class="test-card">
+            <div>
+              <h3><%= info.studio.name %></h3>
+              <p><%= info.studio.address  %></p>
+            </div>
+            <div>
+              <%= cl_image_tag info.studio.photo, height: 300, width: 400, crop: :fill %>
+            </div>
+            <div class="test-card-buttons">
+
+              <button>
+                <%= link_to "confirm", confirm_path(booking),method: :post,
+                data: { confirm: "Are you sure?" } %>
+              </button>
+
+              <button>
+                <%= link_to "cancel", cancel_path(booking),method: :patch,
+                data: { confirm: "Are you sure?" } %>
+              </button>
+            </div>
           </div>
         <% end %>
       <% end %>
