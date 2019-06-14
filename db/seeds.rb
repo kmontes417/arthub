@@ -48,8 +48,8 @@ Studio.create!(name: "Record Factory", category: "recording studio", description
 Studio.create!(name: "CoolLocation studio", category: "photography studio", description: "A good place to record your music in the middle of Milan city", address: "corso magenta 100", remote_photo_url: "https://images.unsplash.com/photo-1539135950877-26943cd58152?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", user: HOSTS.sample, price: 30, city: "milan")
 Studio.create!(name: "myphoto", category: "photography studio", description: "A good place to record your music in the middle of Milan city", address: "corso magenta, 100", remote_photo_url: "https://images.unsplash.com/photo-1504118008923-1b1a92331fb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80", user: HOSTS.sample, price: 30, city: "milan")
 
-Studio.create!(name: "Dance Studio", category: "dance studio", description: "The perfect place to dance", address: "Piazzale P. Genova,4", remote_photo_url: "http://dancestar.com.hk/image/catalog/home_banner/about_us.jpg", user: HOSTS.sample, price: 32 , city: "milan")
-Studio.create!(name: "Dancers Always", category: "dance studio", description: "A good place to dance", address: "Corso Magenta, 52", remote_photo_url: "https://dancehubsb.org/wp-content/uploads/2018/07/gallery-big-studio-2.jpg", user: HOSTS.sample, price: 30, city: "milan")
+Studio.create!(name: "Dance Studio", category: "dance studio", description: "The perfect place to dance", address: "corso magenta, 23", remote_photo_url: "http://dancestar.com.hk/image/catalog/home_banner/about_us.jpg", user: HOSTS.sample, price: 32 , city: "milan")
+Studio.create!(name: "Dancers Always", category: "dance studio", description: "A good place to dance", address: "corso magenta, 75", remote_photo_url: "https://dancehubsb.org/wp-content/uploads/2018/07/gallery-big-studio-2.jpg", user: HOSTS.sample, price: 30, city: "milan")
 
 puts "Creating Booking seeds"
 
