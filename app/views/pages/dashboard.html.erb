@@ -21,13 +21,24 @@
     <% @bookings.each do |booking|%>
       <%= link_to studio_path(booking) do %>
         <div class="card">
-          <%= booking.studio.name %>
+          <div>
+            <%= booking.studio.name %>
+          </div>
 
-          <%= cl_image_tag booking.studio.photo, height: 300, width: 400, crop: :fill %>
-          <%= booking.user.first_name %>
-          <button>
-            <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %>
-          </button>
+          <div>
+            <%= cl_image_tag booking.studio.photo, height: 300, width: 400, crop: :fill %>
+          </div>
+
+          <div>
+            <%= booking.user.first_name %>
+          </div>
+
+          <div>
+            <button>
+              <%= link_to "add a review", new_booking_review_path(booking.id,Review.new) %>
+            </button>
+          </div>
+
         </div>
       <% end %>
     <% end %>
@@ -48,15 +59,17 @@
 
         <%= link_to studio_path(booking) do %>
         <% info = @bookings.first %>
-
           <div class="test-card">
+
             <div>
               <h3><%= info.studio.name %></h3>
               <p><%= info.studio.address  %></p>
             </div>
+
             <div>
               <%= cl_image_tag info.studio.photo, height: 300, width: 400, crop: :fill %>
             </div>
+
             <div class="test-card-buttons">
 
               <button>
@@ -68,7 +81,9 @@
                 <%= link_to "cancel", cancel_path(booking),method: :patch,
                 data: { confirm: "Are you sure?" } %>
               </button>
+
             </div>
+
           </div>
         <% end %>
       <% end %>
