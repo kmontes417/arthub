@@ -8,6 +8,7 @@
       <div class="studio-wrapper">
         <div class="studio-info">
           <strong><h1><%= @studio.name %></h1></strong>
+          <p>Studio owner: <%= @studio.user.first_name.capitalize %> </p>
           <p><%= @studio.category.capitalize %></p>
           <p><%= @studio.address.capitalize %></p>
           <strong><p><%= '%.2f' % @studio.price %> €/hr</p></strong>
