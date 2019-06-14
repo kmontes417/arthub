@@ -1,12 +1,15 @@
 <div class="form-banner">
           <%= simple_form_for :search, url: studios_path, method: :get  do |f| %>
           <%= f.input_field :category, collection: ["Recording Studio","Photography studio","Dance studio"], include_blank: false, include_hidden: false,
-            label: false %>
+            label: false, class: 'searchbox-city' %>
           <%= f.input_field :city, collection: ["Milan"], include_blank: false, include_hidden: false,
-            label: false %>
+            label: false, class: 'searchbox-city'%>
           <%= f.button :submit, "Search", class: 'search-btn' %>
           <% end %>
-        </div>
+</div>
+
+
+
   <div class="d-flex">
     <div class="cards-container-index">
       <% @studios.each do |studio| %>
