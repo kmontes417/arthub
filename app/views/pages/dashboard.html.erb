@@ -19,7 +19,7 @@
 <div class="d-flex justify-content-around">
   <% if @bookings %>
     <% @bookings.each do |booking|%>
-      <%= link_to studio_path(booking) do %>
+      <%= link_to studio_path(booking.studio) do %>
         <div class="card">
           <div>
             <%= booking.studio.name %>
@@ -52,12 +52,12 @@
 
 <h1 class="header">My Studio's Bookings</h1>
 <div class="d-flex justify-content-around">
-  <% if @studios.present? %>
+  <% if @studios&.first&.bookings.present? %>
 
     <% @studios.each do |studio|%>
       <% studio.bookings.each do |booking| %>
 
-        <%= link_to studio_path(booking) do %>
+        <%= link_to studio_path(booking.studio) do %>
         <% info = @bookings.first %>
           <div class="test-card">
 
