@@ -3,7 +3,7 @@
   justify-content: space-between;
   /*align-items: center;
   flex-wrap: wrap;*/
-  background-color: white;
+  background-color: $light-gray;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   // flex-direction: column;
 
@@ -17,6 +17,12 @@
 .test-card {
   width: 400px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: $light-gray;
+}
+
+
+.test-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .test-card-buttons {
@@ -24,3 +30,6 @@
   display: flex;
   justify-content: center;
 }
+
+
+
