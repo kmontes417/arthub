@@ -52,22 +52,22 @@
 
 <h1 class="header">My Studio's Bookings</h1>
 <div class="d-flex justify-content-around">
-  <% if @studios&.first&.bookings.present? %>
+  <% if @studios&.present? %>
 
     <% @studios.each do |studio|%>
+
       <% studio.bookings.each do |booking| %>
 
         <%= link_to studio_path(booking.studio) do %>
-        <% info = @bookings.first %>
           <div class="test-card">
 
             <div>
-              <h3><%= info.studio.name %></h3>
-              <p><%= info.studio.address  %></p>
+              <h3><%= booking.studio.name %></h3>
+              <p><%= booking.studio.address  %></p>
             </div>
 
             <div>
-              <%= cl_image_tag info.studio.photo, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag booking.studio.photo, height: 300, width: 400, crop: :fill %>
             </div>
 
             <div class="test-card-buttons">
