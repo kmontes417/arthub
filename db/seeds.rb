@@ -49,6 +49,11 @@ Studio.create!(name: "Record Factory", category: "recording studio", description
 Studio.create!(name: "CoolLocation studio", category: "photography studio", description: "A good place to record your music in the middle of Milan city", address: "corso magenta 100", remote_photo_url: "https://images.unsplash.com/photo-1539135950877-26943cd58152?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", user_id: 2, price: 30, city: "milan")
 Studio.create!(name: "myphoto", category: "photography studio", description: "A good place to record your music in the middle of Milan city", address: "Corso Magenta, 100", remote_photo_url: "https://images.unsplash.com/photo-1504118008923-1b1a92331fb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80", user_id: 5, price: 30, city: "milan")
 
+Studio.create!(name: "Dance Club", category: "dance studio", description: "The perfect place to dance", address: "Piazzale P. Genova,4", remote_photo_url: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80", user: User.where(host: true).sample, price: 32 , city: "milan")
+Studio.create!(name: "Club to Dance", category: "dance studio", description: "A good place to dance", address: "Corso Magenta, 52", remote_photo_url: "https://images.unsplash.com/photo-1503507865322-6c069305c4f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80", user: User.where(host: true).sample, price: 30, city: "milan")
+
+
+
 puts "Creating Booking seeds"
 
 30.times do
@@ -69,7 +74,6 @@ puts "Creating Review seeds"
     rating: rand(1..5))
 end
 
-f
 puts "db:seed completed"
 
 # Studio.new()
