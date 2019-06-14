@@ -18,8 +18,10 @@
           <% @studios.each do |studio|%>
           <div>
             <%= link_to studio_path(studio) do %>
-              <div class="card">
-                <%= studio.name %>
+              <div class="card-trip">
+                <div class="p-2">
+                   <%= studio.name.capitalize %>
+                </div>
                 <%= cl_image_tag studio.photo, height: 300, width: 400, crop: :fill %>
               </div>
             <% end %>
@@ -30,12 +32,12 @@
     </div>
     <div class="tab-pane fade" id="profile">
         <h1 class="header">My Bookings</h1>
-        <div class="d-flex justify-content-around navtab-grid">
+        <div class="d-flex justify-content-around navtab-gridz">
           <% if @bookings %>
             <% @bookings.each do |booking|%>
             <div>
               <%= link_to studio_path(booking.studio) do %>
-                <div class="card">
+                <div class="card-trip">
                   <div>
                     <%= booking.studio.name %>
                   </div>
@@ -46,6 +48,10 @@
 
                   <div>
                     <%= booking.user.first_name %>
+                  </div>
+
+                  <div>
+                    <%= booking.status %>
                   </div>
 
                   <div>
@@ -65,7 +71,7 @@
     </div>
     <div class="tab-pane fade" id="messages">
         <h1 class="header">My Studio's Bookings</h1>
-        <div class="d-flex justify-content-around navtab-grid">
+        <div class="navtab-gridz">
           <% if @studios&.present? %>
 
             <%# @studios.each do |studio|%>
@@ -73,7 +79,7 @@
               <% @user_studio_bookings.each do |booking| %>
                 <div>
                 <%= link_to(studio_path(booking.studio)) do %>
-                  <div class="test-card">
+                  <div class="card-trip">
 
                     <div>
                       <h3><%= booking.studio.name %></h3>
@@ -86,12 +92,12 @@
 
                     <div class="test-card-buttons">
 
-                      <button>
+                      <button class="btn btn-success text-white">
                         <%= link_to "confirm", confirm_path(booking),method: :post,
                         data: { confirm: "Are you sure?" } %>
                       </button>
 
-                      <button>
+                      <button class="btn btn-danger text-white">
                         <%= link_to "cancel", cancel_path(booking),method: :patch,
                         data: { confirm: "Are you sure?" } %>
                       </button>

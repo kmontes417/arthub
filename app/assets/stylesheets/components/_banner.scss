@@ -16,6 +16,21 @@
   flex-direction: column;
 }
 
+.show-banner {
+  position: center bottom;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  height: 60vh;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sentence {
+  letter-spacing: 10px;
+}
 
 #search_category {
   color: white;
@@ -40,21 +55,21 @@
   height: 40px;
 }
 
-.simple_form {
+
+.searchbox-category {
+  color: black !important;
+  background-color: rgba(255,255,255,0.4);
+  border: 1px solid black;
+  height: 40px;
+  width:200px;
+  margin-right:20px;
+}
+.searchbox-city {
+  color: black;
+  background-color: rgba(0,0,0,0.4);
+  border: 1px solid white;
+  height: 40px;
+  width:140px;
+  margin-right:20px;
 }
 
-.show-banner {
-  position: center bottom;
-  background-size: cover;
-  color: white;
-  text-align: center;
-  height: 60vh;
-  background-size: 100% 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sentence {
-  letter-spacing: 10px;
-}
