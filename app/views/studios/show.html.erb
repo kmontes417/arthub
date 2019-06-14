@@ -31,7 +31,7 @@
         <% @reviews.each do |review| %>
           <div>
             <div class="test-review-info">
-              <img src="http://unsplash.it/50/50/?random" alt="user" class="avatar">
+              <img src='<%=review.booking.user.photo%>' alt="user" class="avatar">
               <div class="test-review-user">
                 <p>
                   <small><%= review.booking.user.first_name %></small>

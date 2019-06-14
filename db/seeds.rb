@@ -65,11 +65,11 @@ puts "Creating Review seeds"
 30.times do
   Review.create(
     booking: Booking.all.sample,
-    description: ["una cagata pazzesca", "wonderful studio in the middle of milan", "wow, i had a great time there", "lol, terrible", "definitly going back there", "wow it sucks", "i had amazing time there", "it works and it is a beautiful envoirment", "nice stuff, gonna rebook", "nice!"].sample,
+    description: ["Una cagata pazzesca.", "Wonderful studio in the middle of milan.", "Wow, I had a great time there!", "LOL, terrible.", "Definitly going back there.", "Wow it sucks.", "I had amazing time there.", "It works and it is a beautiful envoirment.", "Nice stuff, gonna rebook.", "Nice!"].sample,
     rating: rand(1..5))
 end
 
-
+f
 puts "db:seed completed"
 
 # Studio.new()
