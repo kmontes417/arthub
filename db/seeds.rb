@@ -68,6 +68,11 @@ Studio.create!(name: "Record Factory", category: "recording studio", description
 Studio.create!(name: "Felix Studio", category: "recording studio", description: "the perfect place to organize studio sessions with musicians", address: "Piazzale P. Genova,4", remote_photo_url: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80", user: User.where(host: true).sample, price: 32 , city: "milan")
 Studio.create!(name: "Record Factory", category: "recording studio", description: "A good place to record your music in the middle of Milan city", address: "Corso Magenta, 52", remote_photo_url: "https://images.unsplash.com/photo-1503507865322-6c069305c4f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80", user: User.where(host: true).sample, price: 30, city: "milan")
 
+Studio.create!(name: "Dance Club", category: "dance studio", description: "The perfect place to dance", address: "Piazzale P. Genova,4", remote_photo_url: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80", user: User.where(host: true).sample, price: 32 , city: "milan")
+Studio.create!(name: "Club to Dance", category: "dance studio", description: "A good place to dance", address: "Corso Magenta, 52", remote_photo_url: "https://images.unsplash.com/photo-1503507865322-6c069305c4f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80", user: User.where(host: true).sample, price: 30, city: "milan")
+
+
+
 puts "Creating Booking seeds"
 
 10.times do
@@ -87,7 +92,6 @@ puts "Creating Review seeds"
     description: Faker::Quote.robin,
     rating: rand(1..5))
 end
-
 
 puts "db:seed completed"
 
